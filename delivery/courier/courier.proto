@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package delivery.protobuf;
+package delivery.waiter.protobuf;
 
 import "google/protobuf/empty.proto";
-import "protobuf/delivery.proto";
+import "protobuf/delivery/delivery.proto";
 
-option go_package = "github.com/joseluis8906/go-code/protobuf/deliverpb";
+option go_package = "github.com/joseluis8906/go-code/protobuf/deliver/waiterpb";
 
 service Courier {
   rpc ReportsOrderTaken(ReportsOrderTakenRequest) returns (google.protobuf.Empty)
@@ -14,14 +14,14 @@ service Courier {
 }
 
 message ReportsOrderTakenRequest {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
 
 message ReportsOrderDeliveredRequest {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
 
 message AsksToReleaseTheOrderRequest {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
 

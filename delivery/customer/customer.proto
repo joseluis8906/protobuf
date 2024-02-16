@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package delivery.protobuf;
+package delivery.customer.protobuf;
 
-import "protobuf/delivery.proto";
+import "protobuf/delivery/delivery.proto";
 import "google/protobuf/empty.proto";
 
-option go_package = "github.com/joseluis8906/go-code/protobuf/deliverypb";
+option go_package = "github.com/joseluis8906/go-code/protobuf/delivery/customerpb";
 
 service Customer {
   rpc AsksForActiveOrder(AsksForActiveOrderRequest) returns (AsksForActiveOrderResponse);
@@ -17,34 +17,34 @@ service Customer {
 }
 
 message AsksForActiveOrderRequest {
-  Customer customer = 1;
+  delivery.protobuf.Customer customer = 1;
 }
 
 message AsksForActiveOrderResponse {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
 
 message AsksForAProductRequest {
-  Customer customer = 1;
-  Product product = 2;
+  delivery.protobuf.Customer customer = 1;
+  delivery.protobuf.Product product = 2;
 }
 
 message AsksForAProductResponse {
-  repeated Store stores = 1;
+  repeated delivery.protobuf.Store stores = 1;
 }
 
 message ChoosesAProductRequest {
-  Product product = 1;
+  delivery.protobuf.Product product = 1;
 }
 
 message AsksToPrepareTheOrderRequest {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
 
 message AsksToCancelTheOrderRequest {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
 
 message ConfirmsOrderDeliveredRequest {
-  Order order = 1;
+  delivery.protobuf.Order order = 1;
 }
