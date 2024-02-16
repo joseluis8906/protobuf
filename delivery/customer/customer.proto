@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package delivery.customer.protobuf;
+package delivery.customer;
 
 import "protobuf/delivery/delivery.proto";
 import "google/protobuf/empty.proto";
@@ -17,34 +17,34 @@ service Customer {
 }
 
 message AsksForActiveOrderRequest {
-  delivery.protobuf.Customer customer = 1;
+  delivery.Customer customer = 1;
 }
 
 message AsksForActiveOrderResponse {
-  delivery.protobuf.Order order = 1;
+  delivery.Order order = 1;
 }
 
 message AsksForAProductRequest {
-  delivery.protobuf.Customer customer = 1;
-  delivery.protobuf.Product product = 2;
+  delivery.Customer customer = 1;
+  delivery.Product product = 2;
 }
 
 message AsksForAProductResponse {
-  repeated delivery.protobuf.Store stores = 1;
+  repeated delivery.Store stores = 1;
 }
 
 message ChoosesAProductRequest {
-  delivery.protobuf.Product product = 1;
+  delivery.Product product = 1;
 }
 
 message AsksToPrepareTheOrderRequest {
-  delivery.protobuf.Order order = 1;
+  delivery.Order order = 1;
 }
 
 message AsksToCancelTheOrderRequest {
-  delivery.protobuf.Order order = 1;
+  delivery.Order order = 1;
 }
 
 message ConfirmsOrderDeliveredRequest {
-  delivery.protobuf.Order order = 1;
+  delivery.Order order = 1;
 }
